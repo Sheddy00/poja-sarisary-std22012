@@ -41,17 +41,17 @@ Resources:
     Type: AWS::EFS::MountTarget
     Properties:
       FileSystemId: !Ref Filesystem
-      SubnetId: !Sub '{{resolve:ssm:C:/Program Files/Git/poja/subnet/private1/id}}'
+      SubnetId: !Sub '{{resolve:ssm:/poja/subnet/private1/id}}'
       SecurityGroups:
-        - !Sub '{{resolve:ssm:C:/Program Files/Git/poja/sg/id}}'
+        - !Sub '{{resolve:ssm:/poja/sg/id}}'
 
   MountTarget2:
     Type: AWS::EFS::MountTarget
     Properties:
       FileSystemId: !Ref Filesystem
-      SubnetId: !Sub '{{resolve:ssm:C:/Program Files/Git/poja/subnet/private2/id}}'
+      SubnetId: !Sub '{{resolve:ssm:/poja/subnet/private2/id}}'
       SecurityGroups:
-        - !Sub '{{resolve:ssm:C:/Program Files/Git/poja/sg/id}}'
+        - !Sub '{{resolve:ssm:/poja/sg/id}}'
 
 Outputs:
   AccessPointArnSSM:
